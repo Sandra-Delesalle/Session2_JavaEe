@@ -66,7 +66,7 @@ public class DAO {
         
         public int updateDiscountCode(String code, float rate) throws SQLException {
 		int result = 0;
-		String sql = "UPDATE DISCOUNT_CODE SET RATE = '?' WHERE DISCOUNT_CODE = ?";
+		String sql = "UPDATE DISCOUNT_CODE SET RATE = ? WHERE DISCOUNT_CODE = ?";
 		try (Connection connection = myDataSource.getConnection(); 
 		     PreparedStatement stmt = connection.prepareStatement(sql)) {
 			stmt.setFloat(2, rate);
